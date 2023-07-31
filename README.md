@@ -2,7 +2,7 @@
 <a href="https://www.aboutobjects.com"><img src="ao-logo.png" height=18 style="height: 18px;"/></a>
 </div>
 
-# swiftui-mtv-2023-07
+# swiftui-ao-2023-07
 
 ## SwiftUI Development
 
