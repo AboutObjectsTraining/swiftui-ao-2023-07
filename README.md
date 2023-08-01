@@ -18,6 +18,8 @@ https://github.com/AboutObjectsTraining/Swift-4-Highlights
 
 ### Part 2: SwiftUI Development
 
+https://github.com/AboutObjectsTraining/swiftui-development-code
+
 https://github.com/AboutObjectsTraining/swiftui-coolness
 
 https://github.com/AboutObjectsTraining/swiftui-readinglist
