@@ -47,5 +47,12 @@ extension UnitTests {
         print(yourPhones)
     }
     
-
+    func testGuard() {
+        guard
+            let y = Int("42"),
+            let x = Float("\(y)")
+        else { return }
+        
+        print(x)
+    }
 }
