@@ -12,7 +12,7 @@ struct Author: Codable, Identifiable, Hashable, CustomStringConvertible {
     
     var fullName: String {
         switch (firstName, lastName) {
-            case ("", ""): return Author.unknown
+            case ("", ""): return Self.unknown
             case (let name, ""), ("", let name): return name
             default: return "\(firstName) \(lastName)"
         }

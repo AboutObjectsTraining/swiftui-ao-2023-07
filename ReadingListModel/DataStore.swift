@@ -100,7 +100,7 @@ extension DataStore {
     
     @MainActor func fetchWithAsyncAwait() async throws -> ReadingList {
         let (data, _) = try await URLSession.shared.data(from: storeFileUrl)
-        return try JSONDecoder().decode(ReadingList.self, from: data)
+        return try decoder.decode(ReadingList.self, from: data)
     }
 }
 

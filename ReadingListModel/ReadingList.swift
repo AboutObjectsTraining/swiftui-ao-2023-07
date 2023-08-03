@@ -11,6 +11,12 @@ class ReadingList: Codable, Identifiable, CustomStringConvertible
     
     var description: String { "\n\(ReadingList.self): \n\ttitle: \(title)\n\tbooks: \(books)\n" }
     
+    // TODO: Delete me!
+    init() {
+        self.title = ""
+        self.books = []
+    }
+    
     init(title: String, books: [Book]) {
         self.title = title
         self.books = books
