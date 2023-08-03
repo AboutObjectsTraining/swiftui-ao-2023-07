@@ -4,9 +4,9 @@
 import SwiftUI
 
 struct AccessoryView: View {
-    // TODO: Migrate to view model
-    @State private var text = ""
     
+    @EnvironmentObject var viewModel: CoolViewModel
+        
     var body: some View {
         HStack {
             textField
@@ -23,11 +23,11 @@ struct AccessoryView: View {
 extension AccessoryView {
     
     private func addCell() {
-        // TODO: Implement me!
+        viewModel.addCell()
     }
     
     private func clear() {
-        text = ""
+        viewModel.clearText()
     }
 }
 
@@ -40,14 +40,18 @@ extension AccessoryView {
     
     private var textField: some View {
         ZStack(alignment: .trailing) {
-            TextField("Type here...", text: $text)
-                .textFieldStyle(.roundedBorder)
-            
-            if !text.isEmpty {
+            VStack {
+                TextField("Type here...", text: $viewModel.text)
+                    .textFieldStyle(.roundedBorder)
+            }
+            if !viewModel.text.isEmpty {
                 Button(action: clear, label: clearButtonImage)
                     .padding(.trailing, 6)
             }
         }
+//        .onAppear {
+//            UITextField.appearance().clearButtonMode = .whileEditing
+//        }
     }
     
     private func addButtonImage() -> some View {
@@ -64,24 +68,18 @@ extension AccessoryView {
     }
 }
 
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Text("Content View")
-        }
-        .frame(maxWidth: .infinity)
-        .frame(maxHeight: .infinity)
-        .background(.thinMaterial)
-    }
-}
-
+#if DEBUG
 struct AccessoryView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AccessoryView()
-            .background(.orange)
-        AccessoryView()
-            .preferredColorScheme(.dark)
-            .background(.orange)
+        Group {
+            AccessoryView()
+                .background(.orange)
+            AccessoryView()
+                .preferredColorScheme(.dark)
+                .background(.orange)
+        }
+        .environmentObject(CoolViewModel.testModel)
     }
 }
+#endif

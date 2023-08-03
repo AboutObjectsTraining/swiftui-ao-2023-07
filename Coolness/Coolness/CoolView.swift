@@ -17,8 +17,11 @@ struct CoolView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+#if DEBUG
+struct CoolView_Previews: PreviewProvider {
     static var previews: some View {
         CoolView()
+            .environmentObject(CoolViewModel.testModel)
     }
 }
+#endif
