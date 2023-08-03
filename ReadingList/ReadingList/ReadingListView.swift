@@ -10,15 +10,16 @@ struct ReadingListView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.readingList.books) { book in
-                    NavigationLink(value: book) {
-                        Text(book.title)
+                ForEach(viewModel.cellViewModels, id: \.book) { cellVM in
+                    NavigationLink(value: cellVM) {
+                        
+                        ReadingListCell(viewModel: cellVM)
                     }
                 }
             }
             .navigationTitle(viewModel.readingList.title)
-            .navigationDestination(for: Book.self) { book in
-                Text(book.title)
+            .navigationDestination(for: ReadingListCellVM.self) { cellVM in
+                Text(cellVM.book.title)
                     .font(.largeTitle)
             }
         }
@@ -28,9 +29,11 @@ struct ReadingListView: View {
     }
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ReadingListView()
             .environmentObject(ReadingListVM())
     }
 }
+#endif

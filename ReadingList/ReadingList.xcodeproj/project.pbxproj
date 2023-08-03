@@ -18,6 +18,9 @@
 		B4F400B32A7C28BC00295DEB /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400AE2A7C28BC00295DEB /* DataStore.swift */; };
 		B4F400B42A7C28BC00295DEB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400AF2A7C28BC00295DEB /* Book.swift */; };
 		B4F400B62A7C42ED00295DEB /* ReadingListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400B52A7C42ED00295DEB /* ReadingListVM.swift */; };
+		B4F400B82A7C50B300295DEB /* ReadingListCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400B72A7C50B300295DEB /* ReadingListCellVM.swift */; };
+		B4F400BA2A7C50C800295DEB /* ReadingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400B92A7C50C800295DEB /* ReadingListCell.swift */; };
+		B4F400BC2A7C575A00295DEB /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400BB2A7C575A00295DEB /* TestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		B4F400AE2A7C28BC00295DEB /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		B4F400AF2A7C28BC00295DEB /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B4F400B52A7C42ED00295DEB /* ReadingListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListVM.swift; sourceTree = "<group>"; };
+		B4F400B72A7C50B300295DEB /* ReadingListCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListCellVM.swift; sourceTree = "<group>"; };
+		B4F400B92A7C50C800295DEB /* ReadingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListCell.swift; sourceTree = "<group>"; };
+		B4F400BB2A7C575A00295DEB /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,9 @@
 				B4F400802A7C281E00295DEB /* ReadingListApp.swift */,
 				B4F400822A7C281E00295DEB /* ReadingListView.swift */,
 				B4F400B52A7C42ED00295DEB /* ReadingListVM.swift */,
+				B4F400B92A7C50C800295DEB /* ReadingListCell.swift */,
+				B4F400B72A7C50B300295DEB /* ReadingListCellVM.swift */,
+				B4F400BB2A7C575A00295DEB /* TestData.swift */,
 				B4F400842A7C282100295DEB /* Assets.xcassets */,
 				B4F400862A7C282100295DEB /* Preview Content */,
 			);
@@ -228,7 +237,10 @@
 				B4F400B12A7C28BC00295DEB /* Author.swift in Sources */,
 				B4F400832A7C281E00295DEB /* ReadingListView.swift in Sources */,
 				B4F400B42A7C28BC00295DEB /* Book.swift in Sources */,
+				B4F400BC2A7C575A00295DEB /* TestData.swift in Sources */,
+				B4F400B82A7C50B300295DEB /* ReadingListCellVM.swift in Sources */,
 				B4F400B22A7C28BC00295DEB /* ReadingList.swift in Sources */,
+				B4F400BA2A7C50C800295DEB /* ReadingListCell.swift in Sources */,
 				B4F400B32A7C28BC00295DEB /* DataStore.swift in Sources */,
 				B4F400B62A7C42ED00295DEB /* ReadingListVM.swift in Sources */,
 				B4F400812A7C281E00295DEB /* ReadingListApp.swift in Sources */,

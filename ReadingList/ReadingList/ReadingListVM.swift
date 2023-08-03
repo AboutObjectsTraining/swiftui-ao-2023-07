@@ -6,7 +6,12 @@ import SwiftUI
 final class ReadingListVM: ObservableObject {
     
     private let store: DataStore
-    @Published private(set) var readingList: ReadingList
+    @Published private(set) var cellViewModels: [ReadingListCellVM] = []
+    @Published private(set) var readingList: ReadingList {
+        didSet {
+            cellViewModels = readingList.books.map { ReadingListCellVM(book: $0) }
+        }
+    }
     
     
     init(store: DataStore = DataStore()) {
