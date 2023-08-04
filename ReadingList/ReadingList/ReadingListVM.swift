@@ -16,7 +16,7 @@ final class ReadingListVM: ObservableObject {
     
     init(store: DataStore = DataStore()) {
         self.store = store
-        readingList = ReadingList(title: "---", books: [])
+        readingList = ReadingList(title: "Untitled", books: [])
     }
 }
 
@@ -24,6 +24,17 @@ final class ReadingListVM: ObservableObject {
 // MARK: Intents
 
 extension ReadingListVM {
+    
+    func deleteCell(at index: Int) {
+        cellViewModels.remove(at: index)
+        save()
+    }
+    
+    // TODO: Implement me!
+    private func save() {
+        // let books = cellViewModels.map { $0.book }
+        // Call save on the data store
+    }
     
     func loadIfEmpty() {
         guard readingList.books.isEmpty else { return }

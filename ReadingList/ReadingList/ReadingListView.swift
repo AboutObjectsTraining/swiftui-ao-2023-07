@@ -16,16 +16,33 @@ struct ReadingListView: View {
                 .listRowBackground(Color.brown.opacity(0.1))
             }
             .onDelete { indexSet in
-                // TODO: Implement me!
+                guard let index = indexSet.first else { return }
+                viewModel.deleteCell(at: index)
             }
             .onMove { from, to in
                 // TODO: Implement me!
             }
         }
+        .listStyle(.plain)
+        .navigationDestination(for: ReadingListCellVM.self) { cellVM in
+            Text(cellVM.book.title)
+                .font(.largeTitle)
+        }
     }
     
     var empty: some View {
-        Text("This reading list is currently empty. Tap the Add button to add a book")
+        ZStack {
+            Rectangle()
+                .fill(.brown.opacity(0.1))
+                .ignoresSafeArea()
+            Text("This reading list is currently empty. Tap the Add button to add a book")
+                .padding(40)
+                .multilineTextAlignment(.center)
+                .lineSpacing(6)
+                .font(.title3)
+                .italic()
+                .foregroundColor(.secondary)
+        }
     }
     
     var body: some View {
@@ -37,12 +54,7 @@ struct ReadingListView: View {
                     listOfBooks
                 }
             }
-            .listStyle(.plain)
             .navigationTitle(viewModel.readingList.title)
-            .navigationDestination(for: ReadingListCellVM.self) { cellVM in
-                Text(cellVM.book.title)
-                    .font(.largeTitle)
-            }
             .toolbar {
                 // TODO: Implement add and edit button actions
                 ToolbarItem(placement: .navigation) {
