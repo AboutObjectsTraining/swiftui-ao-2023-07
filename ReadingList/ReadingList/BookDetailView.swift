@@ -24,8 +24,24 @@ struct BookDetailView: View {
         }
         .navigationTitle("Book Detail")
         .toolbar {
-            Button("Cancel", action: cancelAddBook)
-            Button("Done", action: { updateBook(viewModel.book) })
+            Button(viewModel.isEditing ? "Done" : "Edit", action: { })
+//            Button("Cancel", action: cancelAddBook)
+//            Button("Done", action: { updateBook(viewModel.book) })
         }
     }
 }
+
+
+#if DEBUG
+
+struct BookDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            BookDetailView(viewModel: BookDetailVM(book: TestData.book),
+                           updateBook: { book in },
+                           cancelAddBook: { })
+        }
+        .navigationTitle("Book Detail")
+    }
+}
+#endif

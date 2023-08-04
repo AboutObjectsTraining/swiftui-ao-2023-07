@@ -6,6 +6,8 @@ import SwiftUI
 final class BookDetailVM: ObservableObject {
     
     @Published var book: Book
+    @Published var isEditing = false
+    
     
     init(book: Book) {
         self.book = book
