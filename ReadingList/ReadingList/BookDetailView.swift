@@ -25,8 +25,6 @@ struct BookDetailView: View {
         .navigationTitle("Book Detail")
         .toolbar {
             Button(viewModel.isEditing ? "Done" : "Edit", action: { })
-//            Button("Cancel", action: cancelAddBook)
-//            Button("Done", action: { updateBook(viewModel.book) })
         }
     }
 }
