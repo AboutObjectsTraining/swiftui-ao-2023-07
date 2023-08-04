@@ -21,6 +21,7 @@
 		B4F400B82A7C50B300295DEB /* ReadingListCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400B72A7C50B300295DEB /* ReadingListCellVM.swift */; };
 		B4F400BA2A7C50C800295DEB /* ReadingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400B92A7C50C800295DEB /* ReadingListCell.swift */; };
 		B4F400BC2A7C575A00295DEB /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400BB2A7C575A00295DEB /* TestData.swift */; };
+		B4F400C02A7D413D00295DEB /* EmptyList.json in Resources */ = {isa = PBXBuildFile; fileRef = B4F400BF2A7D413D00295DEB /* EmptyList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		B4F400B72A7C50B300295DEB /* ReadingListCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListCellVM.swift; sourceTree = "<group>"; };
 		B4F400B92A7C50C800295DEB /* ReadingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListCell.swift; sourceTree = "<group>"; };
 		B4F400BB2A7C575A00295DEB /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		B4F400BF2A7D413D00295DEB /* EmptyList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B4F400AB2A7C28BC00295DEB /* ReadingList.json */,
+				B4F400BF2A7D413D00295DEB /* EmptyList.json */,
 				B4F400AC2A7C28BC00295DEB /* Author.swift */,
 				B4F400AD2A7C28BC00295DEB /* ReadingList.swift */,
 				B4F400AE2A7C28BC00295DEB /* DataStore.swift */,
@@ -214,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F400C02A7D413D00295DEB /* EmptyList.json in Resources */,
 				B4F400882A7C282100295DEB /* Preview Assets.xcassets in Resources */,
 				B4F400B02A7C28BC00295DEB /* ReadingList.json in Resources */,
 				B4F400852A7C282100295DEB /* Assets.xcassets in Resources */,

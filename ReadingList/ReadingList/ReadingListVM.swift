@@ -16,7 +16,7 @@ final class ReadingListVM: ObservableObject {
     
     init(store: DataStore = DataStore()) {
         self.store = store
-        readingList = ReadingList(title: "Empty", books: [])
+        readingList = ReadingList(title: "---", books: [])
     }
 }
 
