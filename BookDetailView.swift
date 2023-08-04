@@ -4,10 +4,13 @@
 import SwiftUI
 
 
-struct BookView: View {
-    var update: (Book) -> Void
-    @ObservedObject var viewModel: BookVM
+struct BookDetailView: View {
+//    var update: (Book) -> Void
+    @ObservedObject var viewModel: BookDetailVM
     @State private var hasChanges = false
+    
+    let updateBook: (Book) -> Void
+    let cancelAddBook: () -> Void
     
     var body: some View {
         Form {
@@ -27,7 +30,7 @@ struct BookView: View {
         }
         .onDisappear {
             if hasChanges {
-                update(viewModel.book)
+                updateBook(viewModel.book)
             }
         }
     }
@@ -38,7 +41,7 @@ struct BookView: View {
             // FIXME: Cell's ProgressView sets `fractionCompleted` to nil
             // This problem surfaces in the ReadingListCell's progress view.
             // For now, we invoke `updateHandler(_:)` redundantly as a workaround.
-            update(viewModel.book)
+            updateBook(viewModel.book)
         }
 
         viewModel.isEditing.toggle()
@@ -46,7 +49,7 @@ struct BookView: View {
 }
 
 struct BookSection: View {
-    @ObservedObject var viewModel: BookVM
+    @ObservedObject var viewModel: BookDetailVM
     @FocusState var isFocused: Bool
     
     var body: some View {
@@ -68,7 +71,7 @@ struct BookSection: View {
 }
 
 struct AuthorSection: View {
-    @ObservedObject var viewModel: BookVM
+    @ObservedObject var viewModel: BookDetailVM
     
     var body: some View {
         Section(
@@ -88,7 +91,7 @@ struct AuthorSection: View {
 }
 
 struct ProgressSection: View {
-    @ObservedObject var viewModel: BookVM
+    @ObservedObject var viewModel: BookDetailVM
     
     var body: some View {
         Section (
@@ -120,7 +123,7 @@ struct ProgressSection: View {
 
 struct ImageSection: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @ObservedObject var viewModel: BookVM
+    @ObservedObject var viewModel: BookDetailVM
         
     var body: some View {
         HStack {
@@ -139,8 +142,6 @@ struct ImageSection: View {
                             .foregroundColor(.blue)
                             .opacity(viewModel.isEditing ? 1 : 0.5)
                             .padding(viewModel.isEditing ? -6 : 0)
-                            .animation(.easeInOut.speed(0.25).repeatForever(autoreverses: true),
-                                       value: viewModel.animateBorder)
                     }
             } placeholder: {
                 MissingImage()
@@ -172,27 +173,31 @@ struct MissingImage: View {
 
 #if DEBUG
 struct BookView_Previews: PreviewProvider {
-    static let bookVM = BookVM(book: TestData.book)
-    static let bookVMWithNoCoverImage = BookVM(book: TestData.bookWithNoCoverImage)
+    static let bookVM = BookDetailVM(book: TestData.book)
+//    static let bookVMWithNoCoverImage = BookDetailVM(book: TestData.bookWithNoCoverImage)
     static var previews: some View {
         NavigationStack {
-            BookView(update: { _ in }, viewModel: bookVM)
+            BookDetailView(viewModel: BookDetailVM(book: TestData.book),
+                           updateBook: { book in },
+                           cancelAddBook: { })
         }
         .previewDisplayName("Book View")
         NavigationStack {
-            BookView(update: { _ in }, viewModel: bookVM)
+            BookDetailView(viewModel: BookDetailVM(book: TestData.book),
+                           updateBook: { book in },
+                           cancelAddBook: { })
         }
         .previewDisplayName("Book View Dark")
         .preferredColorScheme(.dark)
-        NavigationStack {
-            BookView(update: { _ in }, viewModel: bookVMWithNoCoverImage)
-        }
-        .previewDisplayName("Book w/o Cover")
-        NavigationStack {
-            BookView(update: { _ in }, viewModel: bookVMWithNoCoverImage)
-        }
-        .previewDisplayName("Book w/o Cover Dark")
-        .preferredColorScheme(.dark)
+//        NavigationStack {
+//            BookView(update: { _ in }, viewModel: bookVMWithNoCoverImage)
+//        }
+//        .previewDisplayName("Book w/o Cover")
+//        NavigationStack {
+//            BookView(update: { _ in }, viewModel: bookVMWithNoCoverImage)
+//        }
+//        .previewDisplayName("Book w/o Cover Dark")
+//        .preferredColorScheme(.dark)
     }
 }
 #endif

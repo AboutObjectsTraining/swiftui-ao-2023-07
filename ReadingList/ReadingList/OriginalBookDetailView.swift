@@ -3,7 +3,7 @@
 
 import SwiftUI
 
-struct BookDetailView: View {
+struct OriginalBookDetailView: View {
     
     @ObservedObject var viewModel: BookDetailVM
     
@@ -35,7 +35,7 @@ struct BookDetailView: View {
 struct BookDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            BookDetailView(viewModel: BookDetailVM(book: TestData.book),
+            OriginalBookDetailView(viewModel: BookDetailVM(book: TestData.book),
                            updateBook: { book in },
                            cancelAddBook: { })
         }
