@@ -14,4 +14,8 @@ struct ReadingListApp: App {
                 .environmentObject(readingListViewModel)
         }
     }
+    
+    init() {
+        UITextField.appearance().clearButtonMode = .whileEditing
+    }
 }

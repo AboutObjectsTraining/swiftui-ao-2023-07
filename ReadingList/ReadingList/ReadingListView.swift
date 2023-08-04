@@ -16,11 +16,10 @@ struct ReadingListView: View {
                 .listRowBackground(Color.brown.opacity(0.1))
             }
             .onDelete { indexSet in
-                guard let index = indexSet.first else { return }
-                viewModel.deleteCell(at: index)
+                deleteCells(at: indexSet)
             }
             .onMove { sourceIndexes, destination in
-                viewModel.moveCells(from: sourceIndexes, to: destination)
+                moveCells(at: sourceIndexes, to: destination)
             }
         }
         .listStyle(.plain)
@@ -56,9 +55,9 @@ struct ReadingListView: View {
             }
             .navigationTitle(viewModel.readingList.title)
             .toolbar {
-                // TODO: Implement add and edit button actions
+                // TODO: Implement add button actions
                 ToolbarItem(placement: .navigation) {
-                    Button(action: { }, label: { Image(systemName: "plus.circle.fill") })
+                    Button(action: addBook, label: { Image(systemName: "plus.circle.fill") })
                 }
                 ToolbarItem(placement: .primaryAction) {
                     EditButton()
@@ -69,6 +68,30 @@ struct ReadingListView: View {
         .onAppear {
             viewModel.loadIfEmpty()
         }
+        .sheet(isPresented: $viewModel.isAddingBook) {
+            AddBookView(
+                addBook: viewModel.add(book:),
+                cancelAddBook: viewModel.cancelAddBook
+            )
+        }
+    }
+}
+
+// MARK: Intents
+extension ReadingListView {
+
+    private func deleteCells(at indexes: IndexSet) {
+        // TODO: Move guard to VM.
+        guard let index = indexes.first else { return }
+        viewModel.deleteCell(at: index)
+    }
+    
+    private func moveCells(at sourceIndexes: IndexSet, to destination: Int) {
+        viewModel.moveCells(from: sourceIndexes, to: destination)
+    }
+    
+    private func addBook() {
+        viewModel.addBook()
     }
 }
 

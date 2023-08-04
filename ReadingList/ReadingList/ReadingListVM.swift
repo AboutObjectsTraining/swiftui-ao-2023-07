@@ -13,6 +13,8 @@ final class ReadingListVM: ObservableObject {
         }
     }
     
+    @Published var isAddingBook = false
+    
     
     init(store: DataStore = DataStore()) {
         self.store = store
@@ -33,6 +35,20 @@ extension ReadingListVM {
     func moveCells(from sourceIndexes: IndexSet, to index: Int) {
         cellViewModels.move(fromOffsets: sourceIndexes, toOffset: index)
         save()
+    }
+    
+    func addBook() {
+        isAddingBook = true
+    }
+    
+    func add(book: Book) {
+        let cellVM = ReadingListCellVM(book: book)
+        cellViewModels.insert(cellVM, at: 0)
+        isAddingBook = false
+    }
+    
+    func cancelAddBook() {
+        isAddingBook = false
     }
     
     // TODO: Implement me!
