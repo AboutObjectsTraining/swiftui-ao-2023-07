@@ -49,8 +49,10 @@ extension ReadingListVM {
     }
     
     func update(book: Book) {
-        guard let index = cellViewModels.firstIndex(where: { $0.book.id == book.id }) else { return }
-        cellViewModels[index] = ReadingListCellVM(book: book)
+        guard let cellVM = cellViewModels.first(where: { $0.book.id == book.id }) else {
+            fatalError("\(#function) - Unable to find book \(book)")
+        }
+        cellVM.book = book
         save()
     }
     
@@ -60,8 +62,14 @@ extension ReadingListVM {
     
     // TODO: Implement me!
     private func save() {
-        // let books = cellViewModels.map { $0.book }
-        // Call save on the data store
+        readingList.books = cellViewModels.map { $0.book }
+        
+        do {
+            try store.save(readingList: readingList)
+        }
+        catch {
+            print("Couldn't save reading list to store \(store) due to \(error)")
+        }
     }
     
     @MainActor func loadIfEmpty() {

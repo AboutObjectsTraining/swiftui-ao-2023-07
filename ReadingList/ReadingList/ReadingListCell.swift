@@ -18,6 +18,11 @@ struct ReadingListCell: View {
                         .font(.subheadline)
                 }
             }
+            
+            Spacer()
+            
+            ProgressView(value: viewModel.book.percentComplete)
+                .progressViewStyle(CompletionProgressViewStyle())
         }
     }
 }

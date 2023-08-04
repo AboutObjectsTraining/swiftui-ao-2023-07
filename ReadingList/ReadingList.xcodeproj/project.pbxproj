@@ -43,6 +43,7 @@
 		B4F400E72A7D869300295DEB /* OriginalBookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400E62A7D869300295DEB /* OriginalBookDetailView.swift */; };
 		B4F400EA2A7D943C00295DEB /* TitledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400E82A7D943B00295DEB /* TitledCell.swift */; };
 		B4F400EB2A7D943C00295DEB /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400E92A7D943B00295DEB /* BookDetailView.swift */; };
+		B4F400ED2A7D980000295DEB /* CompletionProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400EC2A7D980000295DEB /* CompletionProgressViewStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		B4F400E62A7D869300295DEB /* OriginalBookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalBookDetailView.swift; sourceTree = "<group>"; };
 		B4F400E82A7D943B00295DEB /* TitledCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitledCell.swift; path = ../../TitledCell.swift; sourceTree = "<group>"; };
 		B4F400E92A7D943B00295DEB /* BookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookDetailView.swift; path = ../../BookDetailView.swift; sourceTree = "<group>"; };
+		B4F400EC2A7D980000295DEB /* CompletionProgressViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompletionProgressViewStyle.swift; path = ../../CompletionProgressViewStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				B4F400BB2A7C575A00295DEB /* TestData.swift */,
 				B4F400E92A7D943B00295DEB /* BookDetailView.swift */,
 				B4F400E82A7D943B00295DEB /* TitledCell.swift */,
+				B4F400EC2A7D980000295DEB /* CompletionProgressViewStyle.swift */,
 				B4F400842A7C282100295DEB /* Assets.xcassets */,
 				B4F400862A7C282100295DEB /* Preview Content */,
 			);
@@ -331,6 +334,7 @@
 				B4F400B42A7C28BC00295DEB /* Book.swift in Sources */,
 				B4F400BC2A7C575A00295DEB /* TestData.swift in Sources */,
 				B4F400B82A7C50B300295DEB /* ReadingListCellVM.swift in Sources */,
+				B4F400ED2A7D980000295DEB /* CompletionProgressViewStyle.swift in Sources */,
 				B4F400E52A7D775300295DEB /* BookDetailVM.swift in Sources */,
 				B4F400B22A7C28BC00295DEB /* ReadingList.swift in Sources */,
 				B4F400BA2A7C50C800295DEB /* ReadingListCell.swift in Sources */,

@@ -98,9 +98,25 @@ extension ReadingListView {
 
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
+    static var viewModel: ReadingListVM = {
+        var vm = ReadingListVM()
+        vm.loadIfEmpty()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            vm.cellViewModels[0].book.percentComplete = 1.0
+            vm.cellViewModels[1].book.percentComplete = 0.9
+            vm.cellViewModels[2].book.percentComplete = 0.6
+            vm.cellViewModels[3].book.percentComplete = 0.3
+        }
+        return vm
+    }()
+    
     static var previews: some View {
         ReadingListView()
-            .environmentObject(ReadingListVM())
+            .environmentObject(viewModel)
+        ReadingListView()
+            .environmentObject(viewModel)
+            .preferredColorScheme(.dark)
+            .previewDisplayName("Reading List Dark")
         ReadingListView()
             .environmentObject(ReadingListVM(store: DataStore(storeName: "EmptyList")))
     }
