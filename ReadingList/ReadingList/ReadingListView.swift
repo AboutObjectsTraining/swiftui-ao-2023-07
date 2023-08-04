@@ -19,8 +19,8 @@ struct ReadingListView: View {
                 guard let index = indexSet.first else { return }
                 viewModel.deleteCell(at: index)
             }
-            .onMove { from, to in
-                // TODO: Implement me!
+            .onMove { sourceIndexes, destination in
+                viewModel.moveCells(from: sourceIndexes, to: destination)
             }
         }
         .listStyle(.plain)

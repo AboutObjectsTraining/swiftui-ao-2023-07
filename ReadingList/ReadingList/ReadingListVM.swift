@@ -30,13 +30,18 @@ extension ReadingListVM {
         save()
     }
     
+    func moveCells(from sourceIndexes: IndexSet, to index: Int) {
+        cellViewModels.move(fromOffsets: sourceIndexes, toOffset: index)
+        save()
+    }
+    
     // TODO: Implement me!
     private func save() {
         // let books = cellViewModels.map { $0.book }
         // Call save on the data store
     }
     
-    func loadIfEmpty() {
+    @MainActor func loadIfEmpty() {
         guard readingList.books.isEmpty else { return }
         
         Task {
