@@ -6,7 +6,7 @@ import SwiftUI
 struct AddBookView: View {
 
     let addBook: (Book) -> Void
-    let cancelAddBook: () -> Void
+    let cancel: () -> Void
     
     @State var book = Book()
     
@@ -25,7 +25,7 @@ struct AddBookView: View {
             .navigationTitle("Add Book")
             .interactiveDismissDisabled()
             .toolbar {
-                Button("Cancel", action: cancelAddBook)
+                Button("Cancel", action: cancel)
                 Button("Done", action: { addBook(book) })
             }
         }
@@ -35,7 +35,7 @@ struct AddBookView: View {
 #if DEBUG
 struct AddBookView_Previews: PreviewProvider {
     static var previews: some View {
-        AddBookView(addBook: { book in }, cancelAddBook: { })
+        AddBookView(addBook: { book in }, cancel: { })
         ReadingListView()
             .environmentObject(ReadingListVM())
     }

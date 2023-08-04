@@ -3,7 +3,7 @@
 
 import SwiftUI
 
-final class AddBookVM: ObservableObject {
+final class BookDetailVM: ObservableObject {
     
     @Published var book: Book
     

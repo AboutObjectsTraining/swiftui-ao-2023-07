@@ -39,7 +39,8 @@
 		B4F400E02A7D55FA00295DEB /* 1984.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B4F400D02A7D55FA00295DEB /* 1984.jpg */; };
 		B4F400E12A7D55FA00295DEB /* Emma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B4F400D12A7D55FA00295DEB /* Emma.jpg */; };
 		B4F400E32A7D774A00295DEB /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400E22A7D774A00295DEB /* AddBookView.swift */; };
-		B4F400E52A7D775300295DEB /* AddBookVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400E42A7D775300295DEB /* AddBookVM.swift */; };
+		B4F400E52A7D775300295DEB /* BookDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400E42A7D775300295DEB /* BookDetailVM.swift */; };
+		B4F400E72A7D869300295DEB /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F400E62A7D869300295DEB /* BookDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +88,8 @@
 		B4F400D02A7D55FA00295DEB /* 1984.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1984.jpg; sourceTree = "<group>"; };
 		B4F400D12A7D55FA00295DEB /* Emma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Emma.jpg; sourceTree = "<group>"; };
 		B4F400E22A7D774A00295DEB /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
-		B4F400E42A7D775300295DEB /* AddBookVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookVM.swift; sourceTree = "<group>"; };
+		B4F400E42A7D775300295DEB /* BookDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailVM.swift; sourceTree = "<group>"; };
+		B4F400E62A7D869300295DEB /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +139,8 @@
 				B4F400B92A7C50C800295DEB /* ReadingListCell.swift */,
 				B4F400B72A7C50B300295DEB /* ReadingListCellVM.swift */,
 				B4F400E22A7D774A00295DEB /* AddBookView.swift */,
-				B4F400E42A7D775300295DEB /* AddBookVM.swift */,
+				B4F400E62A7D869300295DEB /* BookDetailView.swift */,
+				B4F400E42A7D775300295DEB /* BookDetailVM.swift */,
 				B4F400BB2A7C575A00295DEB /* TestData.swift */,
 				B4F400842A7C282100295DEB /* Assets.xcassets */,
 				B4F400862A7C282100295DEB /* Preview Content */,
@@ -322,12 +325,13 @@
 				B4F400B42A7C28BC00295DEB /* Book.swift in Sources */,
 				B4F400BC2A7C575A00295DEB /* TestData.swift in Sources */,
 				B4F400B82A7C50B300295DEB /* ReadingListCellVM.swift in Sources */,
-				B4F400E52A7D775300295DEB /* AddBookVM.swift in Sources */,
+				B4F400E52A7D775300295DEB /* BookDetailVM.swift in Sources */,
 				B4F400B22A7C28BC00295DEB /* ReadingList.swift in Sources */,
 				B4F400BA2A7C50C800295DEB /* ReadingListCell.swift in Sources */,
 				B4F400E32A7D774A00295DEB /* AddBookView.swift in Sources */,
 				B4F400B32A7C28BC00295DEB /* DataStore.swift in Sources */,
 				B4F400B62A7C42ED00295DEB /* ReadingListVM.swift in Sources */,
+				B4F400E72A7D869300295DEB /* BookDetailView.swift in Sources */,
 				B4F400812A7C281E00295DEB /* ReadingListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

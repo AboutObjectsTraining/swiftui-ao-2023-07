@@ -24,8 +24,9 @@ struct ReadingListView: View {
         }
         .listStyle(.plain)
         .navigationDestination(for: ReadingListCellVM.self) { cellVM in
-            Text(cellVM.book.title)
-                .font(.largeTitle)
+            BookDetailView(viewModel: cellVM.makeBookDetailVM(),
+                           updateBook: viewModel.update(book:),
+                           cancelAddBook: viewModel.cancel)
         }
     }
     
@@ -71,7 +72,7 @@ struct ReadingListView: View {
         .sheet(isPresented: $viewModel.isAddingBook) {
             AddBookView(
                 addBook: viewModel.add(book:),
-                cancelAddBook: viewModel.cancelAddBook
+                cancel: viewModel.cancel
             )
         }
     }

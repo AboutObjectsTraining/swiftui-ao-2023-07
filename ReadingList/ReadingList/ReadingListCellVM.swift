@@ -9,6 +9,10 @@ final class ReadingListCellVM: ObservableObject {
     init(book: Book) {
         self.book = book
     }
+    
+    func makeBookDetailVM() -> BookDetailVM {
+        BookDetailVM(book: book)
+    }
 }
 
 extension ReadingListCellVM: Hashable {

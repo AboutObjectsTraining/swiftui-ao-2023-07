@@ -45,9 +45,16 @@ extension ReadingListVM {
         let cellVM = ReadingListCellVM(book: book)
         cellViewModels.insert(cellVM, at: 0)
         isAddingBook = false
+        save()
     }
     
-    func cancelAddBook() {
+    func update(book: Book) {
+        guard let index = cellViewModels.firstIndex(where: { $0.book.id == book.id }) else { return }
+        cellViewModels[index] = ReadingListCellVM(book: book)
+        save()
+    }
+    
+    func cancel() {
         isAddingBook = false
     }
     
