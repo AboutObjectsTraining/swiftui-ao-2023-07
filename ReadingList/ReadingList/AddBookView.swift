@@ -11,14 +11,22 @@ struct AddBookView: View {
     @State var book = Book()
     
     var body: some View {
-        Form {
-            Section("Book") {
-                TextField("Title", text: $book.title)
-                TextField("Year", text: $book.year)
+        NavigationStack {
+            Form {
+                Section("Book") {
+                    TextField("Title", text: $book.title)
+                    TextField("Year", text: $book.year)
+                }
+                Section("Author") {
+                    TextField("First Name", text: $book.author.firstName)
+                    TextField("Last Name", text: $book.author.lastName)
+                }
             }
-            Section("Author") {
-                TextField("First Name", text: $book.author.firstName)
-                TextField("Last Name", text: $book.author.lastName)
+            .navigationTitle("Add Book")
+            .interactiveDismissDisabled()
+            .toolbar {
+                Button("Cancel", action: cancelAddBook)
+                Button("Done", action: { addBook(book) })
             }
         }
     }
@@ -27,8 +35,9 @@ struct AddBookView: View {
 #if DEBUG
 struct AddBookView_Previews: PreviewProvider {
     static var previews: some View {
-//        AddBookView(viewModel: AddBookVM(book: TestData.book))
         AddBookView(addBook: { book in }, cancelAddBook: { })
+        ReadingListView()
+            .environmentObject(ReadingListVM())
     }
 }
 #endif
