@@ -6,7 +6,7 @@
 
 ## SwiftUI Development
 
-Materials for SwiftUI Development class, July, 2023
+Materials for SwiftUI Development class, July, 2023.
 
 ### Part 1: Swift Programming
 
